@@ -36,38 +36,24 @@ void open(){
   LED_ON(LED1);
   LED_ON(LED2);
   LED_ON(LowpowerLED);
-  delay(1000);
+  Open_Door();
   LED_OFF(LED0);
   LED_OFF(LED1);
   LED_OFF(LED2);
   LED_OFF(LowpowerLED);
 }
+
+
 void setup() {
-  // put your setup code here, to run once:
   Serial1.begin(115200);
   Serial1.write("Serial1 Begin\n");
   Servo_Init();
   LED_Init();
   finger_Init();
-  
-
-  
-  //Serial1.write(Add_Finger());
-
-  //search(Open_Door);
-  // LED_ON(LED0);
-  // LED_ON(LED1);
-  // LED_ON(LED2);
-  // LED_ON(LowpowerLED);
-  
+   
 }
 
 void loop() {
   delay(300);
   search(open);
-  //Serial1.write(uint8_t(ReadADC_BAT()) );
-  //Serial.printf("PA0 Voltage is %d mv \n", analogReadMillivolts(ADC_Bat));
-  //Serial1.print("%d",ReadADC_BAT());
-  //Serial1.write(Read_FingerNum());
-  //search(open);
 }
